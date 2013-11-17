@@ -158,7 +158,7 @@ char* forza_json_stringify(forza_metric_t* metric) {
   snprintf(buf, sizeof(buf), "%.8f", metric->metric);
   forza__json_append(&json, "metric", buf, 0);
 
-  snprintf(buf, sizeof(buf), "%lu", metric->time);
+  snprintf(buf, sizeof(buf), "%lld", metric->time);
   forza__json_append(&json, "time", buf, 1);
 
   str_buf = forza__json_stringify_string(metric->host);
