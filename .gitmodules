@@ -7,3 +7,6 @@
 [submodule "deps/env"]
 	path = deps/env
 	url = https://github.com/mmalecki/env.git
+[submodule "deps/timestamp"]
+	path = deps/timestamp
+	url = git@github.com:clibs/timestamp.git

@@ -5,6 +5,7 @@
 #include <unistd.h>
 
 #include <uv.h>
+#include <timestamp.h>
 
 #include <forza.h>
 
@@ -156,7 +157,7 @@ forza_metric_t* forza_new_metric() {
     return NULL;
   }
 
-  metric->time = (time_t) - 1;
+  metric->time = (int64_t) - 1;
   metric->service = NULL;
   metric->description = NULL;
   metric->host = hostname;
@@ -188,8 +189,8 @@ void forza_send(forza_metric_t* metric) {
     return;
   }
 
-  if (metric->time == ((time_t) - 1)) {
-    metric->time = time(NULL);
+  if (metric->time == ((int64_t) - 1)) {
+    metric->time = timestamp();
   }
 
   json_data = forza_json_stringify(metric);

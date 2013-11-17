@@ -4,7 +4,7 @@ OBJS += src/forza.o
 OBJS += src/connect.o
 OBJS += src/json.o
 
-CFLAGS += -g -Wall -Ideps/libuv/include -Ideps/saneopt/include -Ideps/env/include -Iinclude
+CFLAGS += -g -Wall -Ideps/libuv/include -Ideps/saneopt/include -Ideps/env/include -Ideps/timestamp/ -Iinclude
 ifdef FORZA_VERSION_HASH
   CFLAGS += -DFORZA_VERSION_HASH='"$(FORZA_VERSION_HASH)"'
 endif
